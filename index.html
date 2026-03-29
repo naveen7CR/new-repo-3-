@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>📅 Smart Planner</h1>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Enter your task...">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="progress">
+            <p>Progress</p>
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+        </div>
+
+        <button class="theme-btn" onclick="toggleTheme()">🌙 Toggle Theme</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
