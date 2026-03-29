@@ -102,3 +102,7 @@ li.completed {
 .dark li {
     background: #444;
 }
+
+.dark li.completed {
+    background: #555;
+}

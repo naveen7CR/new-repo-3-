@@ -1,4 +1,13 @@
+window.onload = () => {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+        tasks = JSON.parse(savedTasks);
+        renderTasks();
+    }
+};
+
 let tasks = [];
+
 
 function addTask() {
     const input = document.getElementById("taskInput");
@@ -19,6 +28,7 @@ function addTask() {
 function renderTasks() {
     const list = document.getElementById("taskList");
     list.innerHTML = "";
+
 
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
@@ -63,3 +73,14 @@ function updateProgress() {
 function toggleTheme() {
     document.body.classList.toggle("dark");
 }
+setInterval(() => {
+    const now = new Date();
+    document.getElementById("dateTime").textContent = now.toLocaleString();
+}, 1000);
+
+function clearAll() {
+    tasks = [];
+    renderTasks();
+}
+
+document.getElementById("clearBtn").addEventListener("click", clearAll);
